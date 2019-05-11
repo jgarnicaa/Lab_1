@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package unal.poo.practica;
-import java.util.*;
+
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
-import static unal.poo.practica.RobotBase.objetos;
+
 
 /**
  *

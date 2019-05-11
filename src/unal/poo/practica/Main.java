@@ -6,8 +6,11 @@
 package unal.poo.practica;
 import becker.robots.*;
 import java.awt.Color;
+
 import java.util.*;
-import static unal.poo.practica.RobotBase.objetos;
+
+
+
 
 /**
  *
@@ -21,12 +24,39 @@ public class Main {
     objetos.showThingCounts(true);
         boolean cid=false;
        Granjero g= new Granjero("Eduardo",objetos,6,2,Direction.WEST);
+       g.setColor(Color.DARK_GRAY);
    // while (cid){
    
     
     //}
    
      Scanner sn = new Scanner(System.in);
+     
+     
+  
+    
+            
+    System.out.println("introduzca el numero deseado de vacas a registrar: ");
+    int n=sn.nextInt();
+    ArrayList<Vaca> VacaL=new ArrayList<>();
+    
+    for(int i=0;i<n;i++){
+        int x=0;
+        int y=0;
+   System.out.println("En que parcela la quiere ubicar: ");
+   int p=sn.nextInt();
+   if (p==1){
+       x=(int) (Math.random() * 2);
+       y=i;
+   }
+    Vaca vaca=new Vaca(i, objetos,x,y,Direction.NORTH);
+    VacaL.add(vaca);
+   
+    }   
+    
+ 
+
+    
         boolean salir = false;
         int opcion; //Guardaremos la opcion del usuario
  
