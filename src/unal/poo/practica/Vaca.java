@@ -23,6 +23,7 @@ public class Vaca extends Robot {
     private int gest=0;
     private int cantidadL=0;
     private String estado="sana";
+    
 int numAle=(int) (Math.random() * 10);
 
     public Vaca(int id, City city, int i, int i1, Direction drctn) {
