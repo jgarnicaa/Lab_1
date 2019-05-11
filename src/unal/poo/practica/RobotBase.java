@@ -21,10 +21,11 @@ public class RobotBase
             
             //Direction.NORTH, EAST, SOUTH, WEST
             //Definicion de la ubicacion del robot, Ciudad, posicion, Direccion, Numero things en el bolso.
-        Vaca v1=new Vaca(1,objetos,1,1,Direction.NORTH);
+            
+            Vaca v1=new Vaca(1,objetos,1,1,Direction.NORTH);
         
 	    //Mover una interseccion en el sentido al cual este apuntando el objeto.
-            v1.setColor(Color.green);
+            v1.setColor(Color.black);
             
             
             //Girar a la izquierda

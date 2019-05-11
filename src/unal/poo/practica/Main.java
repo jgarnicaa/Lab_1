@@ -20,7 +20,7 @@ public class Main {
     objetos = new City("Field.txt");
     objetos.showThingCounts(true);
         boolean cid=false;
-        
+       Granjero g= new Granjero("Eduardo",objetos,6,2,Direction.WEST);
    // while (cid){
    
     
@@ -32,7 +32,7 @@ public class Main {
  
         while (!salir) {
  
-            System.out.println("1. Resgistrar vacas");
+            System.out.println("1. Registrar vacas");
             System.out.println("2. Registrar vitales por defecto");
             System.out.println("3. Consultar estado de vaca");
             System.out.println("4. Solicitar ordeño");
@@ -45,14 +45,16 @@ public class Main {
  
                 switch (opcion) {
                     case 1:
-                        System.out.println("Has seleccionado la opcion 1");
+                        g.regVa();
                         break;
                     case 2:
-                        System.out.println("Has seleccionado la opcion 2");
+                        g.regVi();
                         break;
                     case 3:
-                        System.out.println("Has seleccionado la opcion 3");
+                        g.conVa();
                         break;
+                    case 4:
+                        g.solO();
                     case 5:
                         salir = true;
                         break;
@@ -67,7 +69,6 @@ public class Main {
     }
 
     
-    
-  public void menu(){
-       
-}}
+
+
+}
