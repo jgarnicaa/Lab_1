@@ -8,6 +8,7 @@ import becker.robots.*;
 import java.awt.Color;
 
 import java.util.*;
+import static unal.poo.practica.Granjero.objetos;
 
 
 
@@ -19,86 +20,77 @@ import java.util.*;
 public class Main {
     
     public static City objetos;
+    public static void menu(int opcion){
+        Scanner sn = new Scanner(System.in);
+
+switch (opcion) {
+            case 1:  
+                      System.out.println("introduzca el numero deseado de vacas a registrar: ");
+                      int  n=sn.nextInt();
+                      Vaca v[]=new Vaca[n];   System.out.println("1.1");
+                        System.out.println("Introduzca los valores de referencia:");
+                System.out.println("Pulso:");
+                int  pref=sn.nextInt();
+                System.out.println("Ritmo Cardiaco:");
+                int  rref=sn.nextInt();
+                System.out.println("Temperatura");
+                int  tref=sn.nextInt();
+                       for(int i=0;i<n;i++){
+            int x=0;
+            int y=0;
+            System.out.println("En que parcela la quiere ubicar: ");
+            int p=sn.nextInt();
+                 if (p==1){
+                    x=1;
+                    y=i;
+                 }
+                 else if (p==2){
+                    x=3;
+                    y=i;
+                 }
+                 else  if (p==3){
+                    x=5;
+                    y=i;   
+            }
+             v[i]=new Vaca(i,pref,rref,tref,objetos,x,y,Direction.NORTH);}
+             System.out.println("1.2");
+     break;
+     
+            
+              
+                
+       
+    }
+}
     public static void main(String []args){
+         Scanner sn = new Scanner(System.in);
+          
+            
     objetos = new City("Field.txt");
     objetos.showThingCounts(true);
+    
         boolean cid=false;
        Granjero g= new Granjero("Eduardo",objetos,6,2,Direction.WEST);
-       g.setColor(Color.DARK_GRAY);
-   // while (cid){
-   
-    
-    //}
-   
-     Scanner sn = new Scanner(System.in);
+       g.setColor(Color.YELLOW);
      
-     
-  
-    
+       boolean a=true;
+       while(a=true){
             
-    System.out.println("introduzca el numero deseado de vacas a registrar: ");
-    int n=sn.nextInt();
-    ArrayList<Vaca> VacaL=new ArrayList<>();
+            System.out.println("1. Registrar vacas y signos vitales por defecto");
+            System.out.println("2. Consultar estado de vaca");
+            System.out.println("3. Solicitar ordeño");
+            System.out.println("4. Salir");
+            System.out.println("seleccione opcion: ");
+            int opcion=sn.nextInt();
+          
+           if (opcion==4){
+           a=false;
+           }else{
+            Main.menu(opcion);}
+       }
+      
+ 
     
-    for(int i=0;i<n;i++){
-        int x=0;
-        int y=0;
-   System.out.println("En que parcela la quiere ubicar: ");
-   int p=sn.nextInt();
-   if (p==1){
-       x=(int) (Math.random() * 2);
-       y=i;
-   }
-    Vaca vaca=new Vaca(i, objetos,x,y,Direction.NORTH);
-    VacaL.add(vaca);
-   
-    }   
-    
- 
-
-    
-        boolean salir = false;
-        int opcion; //Guardaremos la opcion del usuario
- 
-        while (!salir) {
- 
-            System.out.println("1. Registrar vacas");
-            System.out.println("2. Registrar vitales por defecto");
-            System.out.println("3. Consultar estado de vaca");
-            System.out.println("4. Solicitar ordeño");
-            System.out.println("5. Salir");
- 
-            try {
- 
-                System.out.println("Escribe una de las opciones");
-                opcion = sn.nextInt();
- 
-                switch (opcion) {
-                    case 1:
-                        g.regVa();
-                        break;
-                    case 2:
-                        g.regVi();
-                        break;
-                    case 3:
-                        g.conVa();
-                        break;
-                    case 4:
-                        g.solO();
-                    case 5:
-                        salir = true;
-                        break;
-                    default:
-                        System.out.println("Solo números entre 1 y 4");
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Debes insertar un número");
-                sn.next();
-            }
-        }
     }
-
-    
-
-
 }
+   
