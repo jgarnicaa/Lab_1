@@ -22,12 +22,14 @@ public class Main {
     public static City objetos;
     public static void menu(int opcion){
         Scanner sn = new Scanner(System.in);
-
+Vaca va[];
 switch (opcion) {
+
+       
             case 1:  
                       System.out.println("introduzca el numero deseado de vacas a registrar: ");
                       int  n=sn.nextInt();
-                      Vaca v[]=new Vaca[n];   System.out.println("1.1");
+                      va=new Vaca[n];   System.out.println("1.1");
                         System.out.println("Introduzca los valores de referencia:");
                 System.out.println("Pulso:");
                 int  pref=sn.nextInt();
@@ -52,10 +54,18 @@ switch (opcion) {
                     x=5;
                     y=i;   
             }
-             v[i]=new Vaca(i,pref,rref,tref,objetos,x,y,Direction.NORTH);}
-             System.out.println("1.2");
+             va[i]=new Vaca(i,pref,rref,tref,objetos,x,y,Direction.NORTH);}
+             
+                       System.out.println("1.2");
      break;
      
+            case 2:
+               // System.out.println("Ingrese el id de la vaca a consultar: ");
+             Vaca va1[]=new Vaca[1];
+             va=va1;
+               // int idv=sn.nextInt();
+              int d=va1[0].getPulso();
+                System.out.println(d);
             
               
                 
